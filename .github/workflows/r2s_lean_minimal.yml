@@ -54,7 +54,8 @@ jobs:
           curl 'https://git.openwrt.org/?p=openwrt/openwrt.git;a=patch;h=22378beb581b113def1dc392ef75306a2168a163' | git apply --reject - || true
           . ../../3_prepare_packages.sh
           . ../../add_openclash.sh
-          . ../../add_passwall.sh 
+          . ../../add_passwall.sh
+          git apply ../../enable_autocore.diff
           sed -i 's/@LINUX_5_4//' package/lean/luci-app-flowoffload/Makefile
           . ../../5_mods.sh
           mv ../../scripts/check_wan4.sh package/base-files/files/usr/bin && sed -i '/exit/i\/bin/sh /usr/bin/check_wan4.sh &' package/base-files/files/etc/rc.local
@@ -66,7 +67,7 @@ jobs:
         id: assemble_artifact
         run: |
           . x_assemble_artifact.sh
-          release_tag="R2S-Minimal1-$(date +%Y-%m-%d)"
+          release_tag="R2S-Minimal-$(date +%Y-%m-%d)"
           echo "##[set-output name=release_tag;]$release_tag"
 
       - name: Create Release
