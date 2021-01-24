@@ -38,3 +38,5 @@ wget -qO- https://github.com/chengcharles316/Openwrt-R2S/raw/master/scripts/auto
 ```bash
 sh /tmp/upload/autoupdate-offline.sh
 ```
+
+在此感谢klever1988大神的原创
