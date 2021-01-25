@@ -66,7 +66,7 @@ jobs:
         id: assemble_artifact
         run: |
           . x_assemble_artifact.sh
-          release_tag="R2S-Minimal-$(date +%Y-%m-%d)"-test
+          release_tag="R2S-Minimal-$(date +%Y-%m-%d)"
           echo "##[set-output name=release_tag;]$release_tag"
 
       - name: Create Release
