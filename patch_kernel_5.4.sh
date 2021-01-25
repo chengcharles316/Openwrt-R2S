@@ -5,7 +5,8 @@ wget https://raw.githubusercontent.com/coolsnowwolf/lede/master/target/linux/roc
 git apply 003-arm64-dts-rockchip-add-more-cpu-operating-points-for.patch
 cd ../
 git clone https://github.com/openwrt/openwrt && cd openwrt/
-git checkout a47279154e08d54df05fa8bf45fe935ebf0df5da
+#git checkout a47279154e08d54df05fa8bf45fe935ebf0df5da
+git checkout 4ebec0b3e2bc259be8c788a9a792ed2250b30433
 #rm target/linux/generic/pending-5.4/403-mtd-hook-mtdsplit-to-Kbuild.patch
 #rm target/linux/generic/hack-5.4/700-swconfig_switch_drivers.patch
 cp -a ./target/linux/generic/files/* ../kernel/
