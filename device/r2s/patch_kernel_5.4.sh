@@ -1,6 +1,6 @@
 cd friendlywrt-rk3328
 cd kernel/
-git apply ../../add_fullconenat.diff
+git apply ../../device/r2s/add_fullconenat.diff
 wget https://raw.githubusercontent.com/coolsnowwolf/lede/master/target/linux/rockchip/patches-5.4/003-arm64-dts-rockchip-add-more-cpu-operating-points-for.patch
 git apply 003-arm64-dts-rockchip-add-more-cpu-operating-points-for.patch
 cd ../
@@ -14,5 +14,5 @@ cp -a ./target/linux/generic/files/* ../kernel/
 ./scripts/patch-kernel.sh ../kernel target/linux/generic/hack-5.4
 cd ../
 wget https://github.com/torvalds/linux/raw/master/scripts/kconfig/merge_config.sh && chmod +x merge_config.sh
-grep -i '_NETFILTER_\|FLOW' ../.config.override > .config.override
+grep -i '_NETFILTER_\|FLOW' ../device/r2s/.config.override > .config.override
 ./merge_config.sh -m .config.override kernel/arch/arm64/configs/nanopi-r2_linux_defconfig && mv .config kernel/arch/arm64/configs/nanopi-r2_linux_defconfig
