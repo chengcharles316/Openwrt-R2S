@@ -1,6 +1,7 @@
 cd friendlywrt-rk3328
 cd kernel/
 git apply ../../add_fullconenat.diff
+wget https://raw.githubusercontent.com/chengcharles316/Openwrt-R2S/master/003-arm64-dts-rockchip-add-more-cpu-operating-points-for.patch
 git apply ../../003-arm64-dts-rockchip-add-more-cpu-operating-points-for.patch
 cd ../
 git clone https://github.com/openwrt/openwrt && cd openwrt/
